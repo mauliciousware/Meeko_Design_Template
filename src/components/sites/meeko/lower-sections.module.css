@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "Meeko Caveat";
+  src: url("/sites/meeko/caveat.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.about { padding-top: 100px; border-top: 1px solid #1d1d1d; background: #fff; scroll-margin-top: 40px; }
+.aboutInner { padding-bottom: 100px; border-bottom: 1px solid #1d1d1d; }
+.aboutColumns { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.portrait { position: relative; width: 100%; aspect-ratio: 1; flex: none; }
+.portraitPhoto { display: block; width: 100%; height: 100%; object-fit: cover; mask: url("/sites/meeko/about-mask.svg") center / cover no-repeat; }
+.portraitOutline { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.tape { display: none; position: absolute; width: 247px; height: 62px; top: -33px; left: 167px; }
+.availability { position: absolute; display: grid; place-items: center; width: 106px; height: 106px; border: 1px solid #1d1d1d; border-radius: 50%; background: #e3f2ff; bottom: 30px; left: 30px; color: #1d1d1d; transition: transform 200ms ease; }
+.availability:hover { transform: scale(1.04); }
+.circularText { width: 80px; height: 80px; animation: circle 30s linear infinite; }
+.envelope { position: absolute; width: 23px; height: 16px; }
+.aboutContent { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+.aboutText { display: flex; flex-direction: column; gap: 20px; }
+.heading { font-size: 36px; font-weight: 500; line-height: 1.125; letter-spacing: -.04em; }
+.aboutText p, .postText p { font-size: 18px; line-height: 1.55; font-weight: 375; }
+.skills { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px 40px; }
+.skill { display: flex; flex-direction: column; gap: 10px; }
+.skillLabel { display: flex; justify-content: space-between; font-size: 18px; line-height: 1.55; font-weight: 375; }
+.skillTrack { height: 10px; width: 100%; border: 1px solid #1d1d1d; border-radius: 20px; overflow: hidden; }
+.skillTrack > span { display: block; height: 100%; width: var(--skill-value); background: var(--skill-color); border-right: 1px solid #1d1d1d; }
+.capabilities { margin-top: 80px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.sectionIntro { width: 100%; max-width: 800px; display: flex; flex-direction: column; gap: 15px; text-align: center; align-items: center; }
+.sectionIntro p { font-size: 22px; line-height: 1.4; font-weight: 375; }
+.sectionIntro strong { font-weight: 500; }
+.capabilityList { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 25px 20px; list-style: none; padding: 0; margin: 0; }
+.capabilityList li { min-height: 62px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 25px; border: 1px solid #1d1d1d; border-radius: 50px; background: #fff; transition: background-color 200ms ease, transform 200ms ease; }
+.capabilityList li:hover { background: #e3e3ff; transform: translateY(-3px); }
+.capabilityList img { flex: none; width: 24px; height: 24px; }
+.capabilityList h3 { font-size: 22px; font-weight: 500; line-height: 1.275; letter-spacing: -.02em; white-space: nowrap; }
+.blog { padding: 100px 0; background: #fff; }
+.blogInner { display: flex; flex-direction: column; align-items: center; gap: 40px; }
+.blogCards { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; max-width: 1040px; gap: 40px; }
+.post { display: flex; flex-direction: column; border: 1px solid #1d1d1d; border-radius: 20px; overflow: hidden; color: inherit; text-decoration: none; background: #fff; }
+.post:nth-child(2) { display: none; }
+.postImage { aspect-ratio: 2400 / 1590; position: relative; overflow: hidden; border-bottom: 1px solid #1d1d1d; }
+.postImage img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 400ms ease; }
+.postImage > span { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%) scale(.8); display: grid; place-items: center; width: 70px; height: 70px; border-radius: 50%; background: #fff; border: 1px solid #1d1d1d; font-size: 30px; opacity: 0; transition: opacity 200ms ease, transform 200ms ease; }
+.post:hover .postImage img { transform: scale(1.035); }
+.post:hover .postImage > span { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.postContent { display: flex; flex-direction: column; gap: 28px; padding: 30px; }
+.postText { display: flex; flex-direction: column; gap: 15px; }
+.postText h3 { font-size: 22px; line-height: 1.25; letter-spacing: -.03em; font-weight: 500; }
+.postMeta { display: flex; align-items: center; gap: 16px; padding-top: 28px; border-top: 1px solid #1d1d1d; font-size: 14px; line-height: 1.4; text-transform: uppercase; font-weight: 500; }
+.postMeta > span:first-of-type { width: 4px; height: 4px; border-radius: 50%; background: #1d1d1d; }
+.footer { position: relative; background: #1d1d1d; color: #fff; padding-top: 130px; }
+.footerInner { position: relative; display: flex; align-items: center; flex-direction: column; gap: 140px; }
+.footerMain { display: flex; flex-direction: column; align-items: center; gap: 30px; width: 100%; max-width: 750px; text-align: center; }
+.speech { width: 79px; height: 61px; }
+.footerText { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.footerText h2 { font-size: 50px; line-height: 1.1; letter-spacing: -.05em; font-weight: 500; }
+.footerText p { font-size: 22px; line-height: 1.4; font-weight: 375; color: #fff; }
+.contactButton { position: relative; margin-top: 10px; }
+.contactButton > a { color: #1d1d1d; background: #fff; }
+.annotation { position: absolute; width: 110px; top: 25px; left: calc(100% + 10px); pointer-events: none; }
+.annotation img { display: block; width: 43px; height: 36px; transform: rotate(255deg); }
+.annotation span { display: block; font-family: "Meeko Caveat", cursive; font-size: 21px; line-height: .9; transform: rotate(-9deg); padding-top: 8px; }
+.copyright { border-top: 1px solid #fff; width: 100%; padding: 40px 0; display: flex; flex-direction: column; align-items: center; gap: 20px; font-size: 18px; line-height: 1.55; text-align: center; font-weight: 375; }
+.copyright p a { text-decoration: underline; text-underline-offset: 3px; }
+.copyright nav { display: flex; gap: 40px; }
+.copyright nav a { text-decoration: none; }
+.copyright a:hover { opacity: .7; }
+.footerAvailability { top: -183px; right: 0; left: auto; bottom: auto; background: #ffecb2; }
+@keyframes circle { to { transform: rotate(360deg); } }
+@media (min-width: 810px) {
+  .about { padding-top: 140px; }
+  .aboutInner { padding-bottom: 140px; }
+  .aboutColumns { align-items: flex-start; gap: 50px; }
+  .portrait { width: 560px; max-width: 100%; }
+  .tape { display: block; }
+  .availability { width: 132px; height: 132px; }
+  .circularText { width: 100px; height: 100px; }
+  .envelope { width: 28px; height: 19px; }
+  .heading { font-size: 46px; }
+  .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sectionIntro p { font-size: 24px; }
+  .blog { padding: 140px 0; }
+  .blogInner { gap: 50px; }
+  .blogCards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .post:nth-child(2) { display: flex; }
+  .postContent { padding: 35px; }
+  .postText h3 { font-size: 24px; }
+  .footer { padding-top: 140px; }
+  .footerInner { gap: 160px; }
+  .footerMain { gap: 45px; }
+  .footerText { gap: 40px; }
+  .footerText h2 { font-size: 80px; line-height: 1.05; }
+  .footerText p { font-size: 26px; font-weight: 350; max-width: 650px; }
+  .annotation { left: calc(100% + 20px); top: 20px; }
+  .annotation span { font-size: 24px; }
+  .copyright { flex-direction: row; justify-content: space-between; text-align: left; }
+  .footerAvailability { top: -206px; right: 40px; }
+}
+@media (min-width: 1300px) {
+  .about { padding-top: 160px; }
+  .aboutInner { padding-bottom: 160px; }
+  .aboutColumns { flex-direction: row; align-items: center; gap: 80px; }
+  .aboutContent { flex: 1; min-width: 0; }
+  .heading { font-size: 50px; }
+  .capabilities { margin-top: 90px; gap: 50px; }
+  .capabilityList { gap: 30px 25px; }
+  .blog { padding: 160px 0; }
+  .blogInner { gap: 60px; }
+  .blogCards + a { margin-top: -20px; }
+  .footer { padding-top: 160px; }
+  .footerInner { gap: 170px; }
+  .footerText h2 { font-size: 90px; }
+  .footerAvailability { top: -226px; }
+}
+@media (max-width: 450px) {
+  .annotation { top: 70px; left: calc(50% + 15px); }
+  .annotation img { transform: rotate(-35deg); }
+  .availability { bottom: 20px; left: 20px; }
+  .footerAvailability { bottom: auto; left: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .circularText { animation: none; }
+  .availability, .capabilityList li, .postImage img, .postImage > span { transition: none; }
+}

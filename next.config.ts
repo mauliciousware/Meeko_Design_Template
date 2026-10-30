@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: "standalone",
+  devIndicators: false,
+  agentRules: false,
 };
 
 export default nextConfig;
