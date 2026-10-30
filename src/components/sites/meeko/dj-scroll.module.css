@@ -1,0 +1,41 @@
+.section { background: #f3faff; border-block: 1px solid #1d1d1d18; padding: 110px max(30px, calc((100vw - 1200px) / 2)) 80px; }
+.heading { max-width: 620px; margin-bottom: 76px; }
+.eyebrow { display: block; font-size: 11px; font-weight: 600; letter-spacing: .13em; margin-bottom: 22px; }
+.heading h2 { font-size: clamp(42px, 5vw, 68px); }
+.heading p { margin-top: 24px; color: #52616b; }
+.layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 45px; align-items: start; }
+.stories { min-width: 0; }
+.story { min-height: 95vh; padding: 25px 0 100px; }
+.story:last-child { min-height: 80vh; padding-bottom: 30px; }
+.story h3 { font-size: clamp(28px, 3vw, 39px); line-height: 1.16; letter-spacing: -.035em; max-width: 440px; }
+.story > p { margin-top: 22px; max-width: 400px; color: #52616b; font-size: 17px; }
+.story figure { margin: 38px 0 0; width: 90%; background: white; border: 1px solid #1d1d1d; border-radius: 12px; padding: 10px; box-shadow: 5px 5px 0 #b9dfff; }
+.story figure img { width: 100%; height: auto; aspect-ratio: 1.5; object-fit: cover; border-radius: 5px; }
+.story figcaption { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 12px; padding: 12px 4px 3px; }
+.story figcaption span { font-size: 20px; }
+.booth { position: sticky; top: 140px; min-width: 0; }
+.boothInner { width: 100%; }
+.deckLabel, .deckFooter { display: flex; justify-content: space-between; gap: 15px; font-size: 9px; font-weight: 600; letter-spacing: .09em; }
+.deckLabel { border-bottom: 1px solid #1d1d1d25; padding-bottom: 18px; }
+.art { width: 100%; height: auto; overflow: visible; }
+.deckFooter { border-top: 1px solid #1d1d1d25; padding-top: 18px; }
+.deckFooter > span:first-child { display: flex; align-items: center; gap: 7px; }
+.deckFooter i { width: 7px; height: 7px; border-radius: 50%; background: #3e8b6a; }
+@media (min-width: 761px) and (max-height: 750px) { .booth { top: 110px; } .art { max-height: 65vh; } }
+@media (max-width: 760px) {
+  .section { padding: 70px 24px 50px; }
+  .heading { margin-bottom: 35px; }
+  .layout { display: flex; flex-direction: column; gap: 25px; }
+  .booth { order: -1; top: 88px; z-index: 2; width: 100%; background: #f3faff; border-bottom: 1px solid #1d1d1d25; }
+  .art { height: 220px; }
+  .deckLabel { padding: 10px 0; font-size: 8px; }
+  .deckFooter { display: none; }
+  .story { min-height: 85vh; padding: 35px 0 65px; }
+  .story:last-child { min-height: auto; }
+  .story figure { width: calc(100% - 6px); }
+  .story h3 { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story { min-height: auto; padding-bottom: 70px; }
+  .booth { position: static; }
+}

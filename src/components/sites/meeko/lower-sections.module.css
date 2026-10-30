@@ -13,7 +13,7 @@
 .portraitPhoto { display: block; width: 100%; height: 100%; object-fit: cover; mask: url("/sites/meeko/about-mask.svg") center / cover no-repeat; }
 .portraitOutline { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .tape { display: none; position: absolute; width: 247px; height: 62px; top: -33px; left: 167px; }
-.availability { position: absolute; display: grid; place-items: center; width: 106px; height: 106px; border: 1px solid #1d1d1d; border-radius: 50%; background: #e3f2ff; bottom: 30px; left: 30px; color: #1d1d1d; transition: transform 200ms ease; }
+.availability { position: absolute; display: grid; place-items: center; width: 106px; height: 106px; border: 1px solid #1d1d1d; border-radius: 50%; background: #d0ebff; bottom: 30px; left: 30px; color: #1d1d1d; transition: transform 200ms ease; }
 .availability:hover { transform: scale(1.04); }
 .circularText { width: 80px; height: 80px; animation: circle 30s linear infinite; }
 .envelope { position: absolute; width: 23px; height: 16px; }
@@ -32,7 +32,7 @@
 .sectionIntro strong { font-weight: 500; }
 .capabilityList { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 25px 20px; list-style: none; padding: 0; margin: 0; }
 .capabilityList li { min-height: 62px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 25px; border: 1px solid #1d1d1d; border-radius: 50px; background: #fff; transition: background-color 200ms ease, transform 200ms ease; }
-.capabilityList li:hover { background: #e3e3ff; transform: translateY(-3px); }
+.capabilityList li:hover { background: #b9dfff; transform: translateY(-3px); }
 .capabilityList img { flex: none; width: 24px; height: 24px; }
 .capabilityList h3 { font-size: 22px; font-weight: 500; line-height: 1.275; letter-spacing: -.02em; white-space: nowrap; }
 .blog { padding: 100px 0; background: #fff; }
@@ -67,7 +67,7 @@
 .copyright nav { display: flex; gap: 40px; }
 .copyright nav a { text-decoration: none; }
 .copyright a:hover { opacity: .7; }
-.footerAvailability { top: -183px; right: 0; left: auto; bottom: auto; background: #ffecb2; }
+.footerAvailability { top: -183px; right: 0; left: auto; bottom: auto; background: #ffe397; }
 @keyframes circle { to { transform: rotate(360deg); } }
 @media (min-width: 810px) {
   .about { padding-top: 140px; }
@@ -124,3 +124,9 @@
   .circularText { animation: none; }
   .availability, .capabilityList li, .postImage img, .postImage > span { transition: none; }
 }
+
+/* Keep the existing frame, mask, and card proportions. */
+.post:first-child .postImage img { object-position:center 25%; }
+.footer { background:#263c49; }
+.postMeta > span:first-of-type { width:auto; height:auto; border-radius:0; background:none; }
+.postMeta > span:nth-of-type(2) { width:4px; height:4px; border-radius:50%; background:#1d1d1d; }

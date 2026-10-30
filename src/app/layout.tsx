@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Meeko — Creative Portfolio",
-  icons: { icon: "/sites/meeko/favicon.png", apple: "/sites/meeko/apple-touch-icon.png" },
-  description: "I'm Meeko, a product designer. Explore my selected work, creative process, and capabilities.",
+  title: "Tyler | DJ Good Vibes, Binghamton NY",
+  icons: { icon: "/sites/tyler/record.svg" },
+  description: "Meet Tyler, DJ Good Vibes. Personalized music, positive energy, and celebrations in Binghamton, NY. Weddings, private parties, school dances, and community events.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

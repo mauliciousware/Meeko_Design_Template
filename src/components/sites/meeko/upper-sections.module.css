@@ -81,3 +81,44 @@
  .more{margin-top:40px} .more p{font-size:22px;line-height:1.4}
 }
 @media(prefers-reduced-motion:reduce){.portrait img{animation:none}.portrait img:first-child{opacity:1}.projectImage img,.desktopNav a,.socials a,.circleLink{transition:none}.mobileNav{animation:none}}
+
+/* Tyler: retain the original spread transforms and card positions. */
+.wordmark { font-size:30px; font-weight:600; letter-spacing:-.05em; line-height:1; }
+.portrait img { object-fit:cover; object-position:center 30%; }
+.infoCard { aspect-ratio:1; border-radius:50%; padding:35px; justify-content:center; background:radial-gradient(circle, transparent 66%, #8199aa22 66.4%, transparent 67%, transparent 69%, #8199aa22 69.4%, transparent 70%), white; }
+.infoCard > img { width:72px; height:54px; margin-bottom:15px; }
+.infoCard p { max-width:220px; }
+.infoCard .circleLink { margin-top:20px; flex-shrink:0; }
+.projectImage img { aspect-ratio:1200/880; object-fit:cover; }
+@media(max-width:809px) { .infoCard { width:100%; max-width:350px; justify-self:center; padding:30px; } .infoCard p { max-width:200px; } }
+@media(max-width:380px) { .infoCard { padding:22px; } .infoCard > img { width:58px; height:43px; margin-bottom:8px; } .infoCard .circleLink { margin-top:12px; } }
+.desktopNav a { white-space:nowrap; }
+
+/* Decorative motion stays separate from the readable record labels. */
+.development { animation: floatLeft 6s cubic-bezier(.77,0,.175,1) infinite; }
+.pen { animation: floatHeadphones 7s cubic-bezier(.77,0,.175,1) -2s infinite; }
+.drink { animation: floatMic 6.5s cubic-bezier(.77,0,.175,1) -3s infinite; }
+.noCode { animation: floatRight 8s cubic-bezier(.77,0,.175,1) -1s infinite; }
+@keyframes floatLeft { 0%,100% { transform:translateY(0) rotate(-12deg); } 50% { transform:translateY(-12px) rotate(-8deg); } }
+@keyframes floatHeadphones { 0%,100% { transform:translateY(0) rotate(8deg); } 50% { transform:translateY(-15px) rotate(1deg); } }
+@keyframes floatMic { 0%,100% { transform:translateY(0) rotate(-12deg); } 50% { transform:translateY(12px) rotate(-5deg); } }
+@keyframes floatRight { 0%,100% { transform:translateY(0) rotate(12deg); } 50% { transform:translateY(-10px) rotate(7deg); } }
+.infoCard { isolation:isolate; background:transparent; border-color:transparent; }
+.infoCard::before { content:""; position:absolute; inset:0; z-index:-1; border:1px solid var(--ink); border-radius:50%; background: repeating-radial-gradient(circle, transparent 0 5px, #526c8133 6px 7px), conic-gradient(from 30deg, #9cc9e9 0deg, #e7f5ff 30deg, #9cc9e9 55deg, #b9dfff 160deg, #eff9ff 200deg, #9cc9e9 235deg, #b9dfff 360deg); animation: recordTurn 24s linear infinite; }
+.infoCard::after { content:""; position:absolute; inset:28px; z-index:-1; border-radius:50%; border:1px solid #8199aa88; background:#fff; box-shadow:0 0 0 5px #ffffff55; }
+.infoCard:nth-child(2)::before { animation-duration:29s; animation-direction:reverse; }
+.infoCard:nth-child(3)::before { animation-duration:32s; animation-delay:-9s; }
+@keyframes recordTurn { to { transform:rotate(360deg); } }
+.recordNotes { position:absolute; inset:0; pointer-events:none; z-index:-2; }
+.recordNotes i { position:absolute; font-style:normal; color:#426681; font-size:27px; opacity:0; animation: recordNotes 7s linear infinite; }
+.recordNotes i:nth-child(1) { left:7%; top:12%; }
+.recordNotes i:nth-child(2) { right:3%; top:43%; animation-delay:-2.5s; font-size:22px; }
+.recordNotes i:nth-child(3) { left:17%; top:78%; animation-delay:-5s; font-size:20px; }
+.infoCard:nth-child(2) .recordNotes i { animation-duration:8s; }
+.infoCard:nth-child(3) .recordNotes i { animation-duration:9s; }
+@keyframes recordNotes { 0% { opacity:0; transform:translate(0,12px) rotate(-8deg); } 20% { opacity:.35; } 75% { opacity:.25; } 100% { opacity:0; transform:translate(-34px,-100px) rotate(15deg); } }
+@media(max-width:380px) { .infoCard::after { inset:19px; } }
+@media(prefers-reduced-motion:reduce) {
+ .development,.pen,.drink,.noCode,.infoCard::before,.recordNotes i { animation:none; }
+ .recordNotes { display:none; }
+}

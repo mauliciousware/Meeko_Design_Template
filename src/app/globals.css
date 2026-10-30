@@ -18,11 +18,11 @@ img, video { max-width: 100%; height: auto; }
 }
 :root {
   --ink: #1d1d1d;
-  --lavender: #e3e3ff;
-  --blue: #e3f2ff;
-  --mint: #dff5ef;
-  --pink: #fae3f9;
-  --yellow: #ffeba6;
+  --lavender: #b9dfff;
+  --blue: #d0ebff;
+  --mint: #b8edd5;
+  --pink: #bcecec;
+  --yellow: #ffe397;
 }
 html { scroll-behavior: smooth; scroll-padding-top: 130px; }
 body { margin:0; font-family:"Uncut Sans",sans-serif; font-size:18px; font-weight:375; line-height:1.55; color:var(--ink); background:white; -webkit-font-smoothing:antialiased; }
@@ -34,7 +34,7 @@ a {color:inherit;text-decoration:none}
 button {font:inherit}
 strong {font-weight:525}
 img {display:block;max-width:100%}
-a:focus-visible,button:focus-visible {outline:3px solid #8073c7;outline-offset:5px}
+a:focus-visible,button:focus-visible {outline:3px solid #2464a0;outline-offset:5px}
 .site-container {width:calc(100% - 60px);max-width:1200px;margin-inline:auto}
 .site-button {display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:12px 24px;background:white;color:var(--ink);border:1px solid var(--ink);border-radius:8px;box-shadow:inset 0 -4px 0 #0002;font-size:17px;font-weight:500;line-height:20px;transition:transform .2s,box-shadow .2s}
 .site-button:hover {transform:translateY(-3px);box-shadow:inset 0 -2px 0 #0002,0 3px 0 #1d1d1d}

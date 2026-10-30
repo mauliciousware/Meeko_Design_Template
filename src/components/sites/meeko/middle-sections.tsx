@@ -5,48 +5,22 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./middle-sections.module.css";
 
 const testimonials = [
-  {
-    name: "Daniel Foster",
-    role: "Startup Founder",
-    quote: "I’ve worked with many designers before, but this experience was on another level. The attention to detail and thoughtful approach made the process smooth and enjoyable.",
-  },
-  {
-    name: "Natalie Brooks",
-    role: "Marketing Manager",
-    quote: "From the very beginning the collaboration felt effortless. Every idea was carefully refined into something meaningful, and the final result was exactly what we hoped for.",
-  },
-  {
-    name: "Ethan Caldwell",
-    role: "Product Director",
-    quote: "I wasn’t sure what to expect at first, but everything turned out better than expected. Communication was clear, timelines were respected, and the final result felt modern.",
-  },
+  { name: "Your soundtrack", role: "Music that feels like you", quote: "Your favorite songs and the memories that come with them belong at the heart of your celebration." },
+  { name: "Your people", role: "Good energy for the whole room", quote: "From family favorites to a new discovery, a good night brings everyone into the moment." },
+  { name: "Your celebration", role: "A little personality goes a long way", quote: "Thoughtful details, a light-up bow tie, and a personal touch make the experience feel your own." },
 ];
-
 const processSteps = [
-  {
-    title: "Problem Framing",
-    description: "I explore insights, and market context to clearly define the problem. Research findings are translated into ideas that shape direction, inform decisions, and establish a strong foundation for the project.",
-  },
-  {
-    title: "Shaping the Idea",
-    description: "Here, I refine initial ideas into clear concepts by aligning strategy and creativity. I develop structural directions that balance innovation with feasibility, while supporting both brand goals and user expectations.",
-  },
-  {
-    title: "Testing the Experience",
-    description: "In this phase, I bring concepts to life through prototyping and real-world testing. I validate functionality, usability, and clarity by iterating on feedback, refining details, and resolving issues before final delivery.",
-  },
-  {
-    title: "Polishing the Outcome",
-    description: "In the final stage of design, thorough attention is given to refine the product, ensuring it meets high standards of quality and functionality through testing, tweaking, and iteration to address any remaining issues.",
-  },
+  { title: "Tell me your vision", description: "We start with your date, venue, and the celebration you have in mind. Tell me about your people and the feeling you want to create." },
+  { title: "Find your soundtrack", description: "Share your favorites, your must-plays, and the songs you’d rather skip. I’ll shape a set around your taste, with room for requests along the way." },
+  { title: "Plan the details", description: "We work through the timing, sound, and lighting together. Clear communication and a thoughtful setup keep the details in tune with your event." },
+  { title: "Enjoy your people", description: "The plans become a celebration. I bring the music and positive energy so you can enjoy the moments you brought everyone together for." },
 ];
-
 const statistics = [
-  ["98%", "Satisfied happy customers"],
-  ["15", "Years of work experience"],
-  ["80+", "Successful projects done"],
-  ["10+", "Design awards received"],
-  ["45", "Travelled around the country"],
+  ["DJ", "Music chosen for your crowd"],
+  ["MC", "A voice to guide the moments"],
+  ["PA", "Quality sound for your event"],
+  ["NY", "Based in Binghamton"],
+  ["YOU", "At the heart of the playlist"],
 ];
 
 export function MiddleSections() {
@@ -90,41 +64,41 @@ export function MiddleSections() {
 
   return (
     <>
-      <section className={styles.testimonials} aria-label="Client testimonials">
+      <section className={styles.testimonials} aria-label="The Good Vibes approach">
         <div className={styles.testimonialInner}>
           <Image src="/sites/meeko/quote.svg" alt="" width={35} height={25} />
           <div className={styles.testimonialText} aria-live="polite" aria-atomic="true">
-            <blockquote className={styles.quote} key={testimonial.name}>“{testimonial.quote}”</blockquote>
+            <p className={styles.quote} key={testimonial.name}>{testimonial.quote}</p>
             <div className={styles.author}>
               <h3>{testimonial.name}</h3>
               <p>{testimonial.role}</p>
             </div>
           </div>
-          <div className={styles.avatars} aria-label="Choose a testimonial">
+          <div className={styles.avatars} aria-label="Explore the Good Vibes approach">
             {testimonials.map((person, index) => (
               <button
                 key={person.name}
                 type="button"
                 className={styles.avatar}
-                aria-label={`Read testimonial from ${person.name}`}
+                aria-label={`Explore ${person.name}`}
                 aria-pressed={selected === index}
                 onClick={() => setSelected(index)}
               >
-                <Image src={`/sites/meeko/testimonial-${index + 1}.jpg`} alt={person.name} width={80} height={80} />
+                <Image src={`/sites/tyler/${["record", "headphones", "microphone"][index]}.svg`} alt="" width={80} height={80} />
               </button>
             ))}
           </div>
         </div>
       </section>
-      <section className={styles.processSection} aria-labelledby="process-heading">
+      <section id="process" className={styles.processSection} aria-labelledby="process-heading">
         <div className={styles.container}>
           <div className={styles.processLayout}>
             <div className={styles.processIntro}>
               <div className={styles.introText}>
-                <h2 id="process-heading">High-quality work with real value considered.</h2>
-                <p>My working process revolves around an approach aimed at maximizing productivity and creativity with clarity and focus. It begins with thorough research and planning, where I gather relevant information and outline key objectives.</p>
+                <h2 id="process-heading">A good night starts with a good plan.</h2>
+                <p>From our first conversation to your last dance, we’ll keep things personal. We’ll talk music, work through the details, and make a plan that fits your celebration.</p>
               </div>
-              <a className="site-button" href="https://clear-spinosaurus-552655.framer.app/contact">Learn More</a>
+              <a className="site-button" href="#contact">Let’s Plan Together</a>
             </div>
             <div className={styles.processCards} ref={stack}>
               {processSteps.map((step, index) => (
@@ -132,7 +106,7 @@ export function MiddleSections() {
                   <div className={styles.cardSurface}>
                     <div className={styles.cardTop}>
                       <div className={styles.iconCircle}>
-                        <Image src={`/sites/meeko/process-${index + 1}.svg`} alt="" width={48} height={48} />
+                        <Image src={`/sites/tyler/${["microphone", "record", "headphones", "record"][index]}.svg`} alt="" width={48} height={48} />
                       </div>
                       <span>(0{index + 1})</span>
                     </div>
@@ -147,8 +121,8 @@ export function MiddleSections() {
           </div>
           <div className={styles.facts}>
             <div className={styles.factsIntro}>
-              <h2>My numbers say it all</h2>
-              <p>These numbers reflect the <strong>experience</strong> and <strong>consistency</strong>, and measurable impact behind the work I’ve delivered over the years.</p>
+              <h2>A few things I bring along</h2>
+              <p>A little <strong>planning</strong>, plenty of <strong>personality</strong>, and the right music for the people who matter to you.</p>
             </div>
             <div className={styles.statistics}>
               {statistics.map(([value, label]) => (

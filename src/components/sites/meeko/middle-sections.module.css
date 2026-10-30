@@ -70,7 +70,7 @@
 .avatar[aria-pressed="true"]:hover { transform: scale(1.25); }
 
 .processSection {
-  background: #e3e3ff;
+  background: #b9dfff;
   border-top: 1px solid #1d1d1d;
   padding: 100px 30px;
 }
@@ -87,15 +87,15 @@
   padding: 30px;
   border-radius: 20px;
   box-shadow: inset 0 0 0 1px #1d1d1d;
-  background: #fbebea;
+  background: #ffebc2;
   display: flex;
   flex-direction: column;
   gap: 30px;
   transform-origin: top center;
 }
-.processCard:nth-child(2) .cardSurface { background: #dbf5f0; }
-.processCard:nth-child(3) .cardSurface { background: #ffe3fb; }
-.processCard:nth-child(4) .cardSurface { background: #e3f2ff; }
+.processCard:nth-child(2) .cardSurface { background: #b8edd5; }
+.processCard:nth-child(3) .cardSurface { background: #bcecec; }
+.processCard:nth-child(4) .cardSurface { background: #d0ebff; }
 .cardTop { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
 .cardTop > span { font-size: 18px; font-weight: 375; line-height: 1.55; }
 .iconCircle { width: 72px; height: 72px; flex-shrink: 0; display: grid; place-items: center; background: #fff; border-radius: 50%; border: 1px solid #1d1d1d; }
@@ -107,11 +107,11 @@
 .factsIntro strong { font-weight: 500; }
 .statistics { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; width: 100%; }
 .statistic { display: flex; align-items: center; justify-content: center; gap: 13px; padding: 19px 25px; border: 1px solid #1d1d1d; border-radius: 50px; background: #fff; }
-.number { font-family: "Inter Display", "Uncut Sans", sans-serif; font-weight: 600; font-size: 54px; line-height: 1; letter-spacing: -2px; color: #e3f2ff; -webkit-text-stroke: 1px #1d1d1d; }
-.statistic:nth-child(2) .number { color: #fbebea; }
-.statistic:nth-child(3) .number { color: #fceab1; }
-.statistic:nth-child(4) .number { color: #dbf5f0; }
-.statistic:nth-child(5) .number { color: #ffe3fb; }
+.number { font-family: "Inter Display", "Uncut Sans", sans-serif; font-weight: 600; font-size: 54px; line-height: 1; letter-spacing: -2px; color: #d0ebff; -webkit-text-stroke: 1px #1d1d1d; }
+.statistic:nth-child(2) .number { color: #ffebc2; }
+.statistic:nth-child(3) .number { color: #ffe397; }
+.statistic:nth-child(4) .number { color: #b8edd5; }
+.statistic:nth-child(5) .number { color: #bcecec; }
 .statisticLabel { width: 140px; font-size: 18px; font-weight: 375; line-height: 1.25; padding-bottom: 3px; }
 
 @keyframes testimonialEnter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
@@ -148,3 +148,9 @@
   .avatar { transition: none; }
   .cardSurface { transform: none !important; }
 }
+
+/* Reuse the original carousel motion with DJ artwork instead of fictional clients. */
+.avatar { background:var(--blue); }
+.avatar:nth-child(2) { background:var(--mint); }
+.avatar:nth-child(3) { background:var(--yellow); }
+.avatar img { padding:10px; object-fit:contain; }
