@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- Preserve the source's locally archived image assets and exact crops. */
+import { ListeningShelf, PartyExtras } from "./party-extras";
 import type { CSSProperties } from "react";
 import styles from "./lower-sections.module.css";
 
@@ -68,6 +69,7 @@ export function LowerSections() {
           </div>
         </div>
       </section>
+      <ListeningShelf />
       <section id="moments" className={styles.blog} aria-labelledby="blog-heading">
         <div className={`site-container ${styles.blogInner}`}>
           <div className={styles.sectionIntro}>
@@ -88,6 +90,7 @@ export function LowerSections() {
           <a className="site-button" href={source}>Plan Your Celebration</a>
         </div>
       </section>
+      <PartyExtras />
       <footer id="contact" className={styles.footer}>
         <div className={`site-container ${styles.footerInner}`}>
           <AvailabilityBadge footer />

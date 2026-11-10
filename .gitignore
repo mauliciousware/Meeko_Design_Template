@@ -8,3 +8,9 @@ out/
 next-env.d.ts
 npm-debug.log*
 .DS_Store
+
+# Keep video media local; commit poster images and player code.
+*.[mM][pP]4
+*.[mM][oO][vV]
+*.[wW][eE][bB][mM]
+*.[mM]4[vV]
