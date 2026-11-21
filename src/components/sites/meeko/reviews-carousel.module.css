@@ -1,0 +1,22 @@
+.section { padding: 100px 0; background: #f3faff; overflow: hidden; }
+.heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 40px; }
+.heading p { margin: 18px 0 10px; color: #52616b; }
+.heading a { font-size: 15px; text-decoration: underline; text-underline-offset: 4px; }
+.pause { flex-shrink: 0; cursor: pointer; }
+.viewport { overflow-x: auto; scrollbar-width: thin; }
+.track { display: flex; width: max-content; animation: drift 85s linear infinite; }
+.track[data-paused=true], .viewport:hover .track, .viewport:focus-within .track { animation-play-state: paused; }
+.group { display: flex; gap: 24px; padding: 6px 24px 14px 0; align-items: start; }
+.card { width: 350px; border: 1px solid var(--ink); border-radius: 18px; padding: 28px; background: white; box-shadow: 4px 5px 0 var(--blue); }
+.card:nth-child(2n) { box-shadow: 4px 5px 0 var(--mint); }
+.stars { color: #876000; letter-spacing: 3px; font-size: 20px; }
+.quote, .full { margin: 20px 0 14px; font-size: 17px; line-height: 1.6; white-space: pre-line; }
+.quote { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; min-height: 163px; }
+.readMore { background: transparent; border: none; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; font-size: 14px; }
+.author { display: flex; align-items: center; gap: 12px; margin-top: 26px; font-size: 15px; font-weight: 500; }
+.initial { display: grid; place-items: center; background: var(--yellow); border: 1px solid var(--ink); border-radius: 50%; width: 38px; height: 38px; flex-shrink: 0; }
+.source { display: inline-block; margin-top: 18px; font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+.status { padding-block: 25px; }
+@keyframes drift { to { transform: translateX(-50%); } }
+@media (max-width: 700px) { .section { padding: 70px 0; } .heading { align-items: start; flex-direction: column; } .card { width: min(320px, 85vw); padding: 24px; } }
+@media (prefers-reduced-motion: reduce) { .track { animation: none; } .group[aria-hidden=true] { display: none; } .pause { display: none; } }
